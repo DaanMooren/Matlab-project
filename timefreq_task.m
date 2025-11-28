@@ -2,8 +2,8 @@ restoredefaultpath;
 if ismac
 addpath('');
 else
- addpath('C:\Users\User\Documents\MATLAB\Zhou_participants\p16\');
- addpath 'C:\Users\User\Documents\MATLAB\Zhou_code\fieldtrip-20171217';
+ addpath('C:\Users\User\Documents\MATLAB\Daan_participants\p16\');
+ addpath 'C:\Users\User\Documents\MATLAB\Daan_code\fieldtrip-20171217';
 end
 % Wavelet
 clear all;
@@ -29,11 +29,11 @@ for ss = 1:length(sessions)
 close all;
 subj = subjects{sb}
 if ismac
-rootdir = append('/Volumes/fpn_rdm$/DM2186_IL_ClosedLoop/09_Data_after_cleaning/closedloop/EEG/',subj,'/stim/');
-outdir = append('/Volumes/fpn_rdm$/DM2186_IL_ClosedLoop/09_Data_after_cleaning/closedloop/EEG/', subj,'/freq/');
+rootdir = append('/Volumes/DM2186_IL_ClosedLoop/09_Data_after_cleaning/closedloop/EEG/',subj,'/stim/');
+outdir = append('/Volumes/DM2186_IL_ClosedLoop/09_Data_after_cleaning/closedloop/EEG/', subj,'/freq/');
 else
-outdir = append ('C:\Users\User\Documents\MATLAB\Zhou_participants\p16\');
-rootdir=append('C:\Users\User\Documents\MATLAB\Zhou_participants\p16\');
+outdir = append ('C:\Users\User\Documents\MATLAB\Daan_participants\p16\');
+rootdir=append('C:\Users\User\Documents\MATLAB\Daan_participants\p16\');
 end
 sess = sessions{ss}
 load(append(rootdir,subj,sess,'_clean_task',st,'.mat'));
@@ -80,4 +80,5 @@ ft_topoplotTFR(cfg, freq_tap);
 filename2 =fullfile(outdir,[filename '_freq' st]);
 save(filename2, 'freq_tap');
 end
+
 end
