@@ -7,12 +7,12 @@ warning off;
 
 restoredefaultpath;
 if ismac
-    addpath('/Volumes/fpn_rdm$/DM2334_IL_CLOSEDLOOP-PINCH/08_Code_book_variables/EEG/03_TFR/');
-    addpath('/Volumes/fpn_rdm$/DM2334_IL_CLOSEDLOOP-PINCH/08_Code_book_variables/toolbox/fieldtrip-20171217/');
+    addpath('/Volumes/DM2334_IL_CLOSEDLOOP-PINCH/08_Code_book_variables/EEG/03_TFR/');
+    addpath('/Volumes/DM2334_IL_CLOSEDLOOP-PINCH/08_Code_book_variables/toolbox/fieldtrip-20171217/');
 else
-    addpath('\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\08_Code_book_variables\EEG\03_TFR\'); % Add the path of the current script
-    addpath('\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\08_Code_book_variables\toolbox\fieldtrip-20171217\'); % Add the path of the Fieldtrip toolbox
-    addpath('\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\08_Code_book_variables\toolbox\fieldtrip-20171217\statfun\');
+    addpath('\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\08_Code_book_variables\EEG\03_TFR\'); % Add the path of the current script
+    addpath('\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\08_Code_book_variables\toolbox\fieldtrip-20171217\'); % Add the path of the Fieldtrip toolbox
+    addpath('\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\08_Code_book_variables\toolbox\fieldtrip-20171217\statfun\');
 end
 % ft_defaults;
 
@@ -39,14 +39,14 @@ end
 for sb = 1:length(subjects)
     subj = subjects(sb)
     if ismac
-        rootdir = append('/Volumes/fpn_rdm$/DM2334_IL_CLOSEDLOOP-PINCH/09_Data_after_cleaning/',subj,'/freq/');;
-        outdir = '/Volumes/fpn_rdm$/DM2334_IL_CLOSEDLOOP-PINCH/11_Final_products/TFR/';
+        rootdir = append('/Volumes/DM2334_IL_CLOSEDLOOP-PINCH/09_Data_after_cleaning/',subj,'/freq/');;
+        outdir = '/Volumes/DM2334_IL_CLOSEDLOOP-PINCH/11_Final_products/TFR/';
         for k = 1:length(sessions)
             eval(append("ave_freq",string(k),"{sb} = load(string(append(rootdir, subj,'_',sessions{",string(k),"},'_freq.mat'))).freq_tap;"))
         end
     else
-        rootdir = append('\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\09_Data_after_cleaning\',subj,'\freq\'); % Add the path of the TF data: _freq.mat
-        outdir = '\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\11_Final_products\TFR\';
+        rootdir = append('\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\09_Data_after_cleaning\',subj,'\freq\'); % Add the path of the TF data: _freq.mat
+        outdir = '\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\11_Final_products\TFR\';
         for k = 1:length(sessions)
             eval(append("ave_freq",string(k),"{sb} = load(string(append(rootdir, subj,'_',sessions{",string(k),"},'_freq.mat'))).freq_tap;"))
         end
@@ -307,3 +307,4 @@ title(append('condition 1 vs condition 2'),'Interpreter', 'none');
 cfg.channel       = 'all';
 figure
 ft_topoplotTFR(cfg, stat2);
+
