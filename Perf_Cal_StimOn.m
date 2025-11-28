@@ -39,15 +39,15 @@ COIlabel = {'Fz','FC1','Cz','FC2'};
             % phaseCon = session(ss); % 1: inphase; -1: antiphase; 0: sham
             
             if ismac
-                rootdir = append('/Volumes/fpn_rdm$/DM2186_IL_ClosedLoop/07_Raw_data/closedloop/EEG/',subj);
-                outputdir = '/Volumes/fpn_rdm$/DM0941_IL_Finetuning/07_Raw_data/CLOSED_LOOP/Scripts/Performance';
+                rootdir = append('/Volumes/DM2186_IL_ClosedLoop/07_Raw_data/closedloop/EEG/',subj);
+                outputdir = '/Volumes/DM0941_IL_Finetuning/07_Raw_data/CLOSED_LOOP/Scripts/Performance';
                 cd(rootdir);
                 filename = append(subj, sess,'.mat');
                 a=load(filename);
             else
-                % rootdir = append('\\ca-um-nas201\fpn_rdm$\DM2186_IL_ClosedLoop\07_Raw_data\closedloop\EEG\',subj);
-                outputdir = '\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\09_Data_after_cleaning\';
-                rootdir = '\\ca-um-nas201\fpn_rdm$\DM2334_IL_CLOSEDLOOP-PINCH\07_Raw_data\data28092024\';
+                % rootdir = append('\\ca-um-nas201\DM2186_IL_ClosedLoop\07_Raw_data\closedloop\EEG\',subj);
+                outputdir = '\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\09_Data_after_cleaning\';
+                rootdir = '\\ca-um-nas201\DM2334_IL_CLOSEDLOOP-PINCH\07_Raw_data\data28092024\';
                 cd(rootdir);
                 filename = append(subj, sess,'.mat');
                 a=load(filename);
@@ -134,3 +134,4 @@ COIlabel = {'Fz','FC1','Cz','FC2'};
         end
     end
 % end
+
