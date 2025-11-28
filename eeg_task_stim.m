@@ -3,8 +3,8 @@ restoredefaultpath;
 if ismac
     %addpath('/Volumes/fpn_rdm$/DM2186_IL_ClosedLoop/08_Code_book_variables/EEG/01_preprocessing');
 else
-    addpath('D:\PhD_project_Zhou_Fang\data\');
-    addpath 'D:\PhD_project_Zhou_Fang\code\fieldtrip-20171217';
+    addpath('D:\PhD_project_Daan_Mooren\data\');
+    addpath 'D:\PhD_project_Daan_Mooren\code\fieldtrip-20171217';
 end
 
 % ======================================================================
@@ -32,8 +32,8 @@ for sb = 1:length(subjects)
         subj = subjects{sb}
         if ismac
         else
-            rootdir = append('D:\PhD_project_Zhou_Fang\data'); % set the path to the participant folders
-            outputdir = append('D:\PhD_project_Zhou_Fang\data');
+            rootdir = append('D:\PhD_project_Daan_Mooren\data'); % set the path to the participant folders
+            outputdir = append('D:\PhD_project_Daan_Mooren\data');
         end
         sess = sessions{ss}
         
@@ -163,4 +163,5 @@ for sb = 1:length(subjects)
         save(filename1, 'data_tapping');
         clear data_tapping data filename event nameinput input
     end
+
 end
