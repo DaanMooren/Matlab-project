@@ -1,10 +1,10 @@
 restoredefaultpath;
 if ismac
     addpath('C:\Users\User\Documents\MATLAB\EEG script\03_TFR+09_Data_after_cleaning\03.TFR');
-    addpath('\C:\Users\User\Documents\MATLAB\Zhou_code\fieldtrip-20171217');
+    addpath('\C:\Users\User\Documents\MATLAB\Daan_code\fieldtrip-20171217');
 else
     addpath('C:\Users\User\Documents\MATLAB\EEG script\03_TFR+09_Data_after_cleaning\03.TFR'); % Add the path of the current script
-    addpath('\C:\Users\User\Documents\MATLAB\Zhou_code\fieldtrip-20171217Z\'); % Add the path of the Fieldtrip toolbox
+    addpath('\C:\Users\User\Documents\MATLAB\Daan_code\fieldtrip-20171217Z\'); % Add the path of the Fieldtrip toolbox
 end
 % ft_defaults;
 
